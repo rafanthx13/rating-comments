@@ -9,10 +9,14 @@ sys.path.insert(0, dir_path + '/src')
 import textminig_code
 
 # Lidar com Chamada Assincrona
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 CORS(app)
 
 @app.route('/')
+def root():
+    return app.send_static_file('index.html')
+
+@app.route('/get')
 @cross_origin
 def hello():
     return 'Hello, World!'
