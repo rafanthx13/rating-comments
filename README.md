@@ -13,7 +13,7 @@
 Página Web para servir de acesso ao servidor Flask que avalie comentário em positivos e negativos.
 
 **Links**
-+ [Página Web para avaliar comentários](https://rafanthx13.github.io/rating-comments-app/)  
++ [Página Web para avaliar comentários](https://rafanthx13.github.io/comments-rating-app/)
 
 ## Tecnologias
 
