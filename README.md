@@ -77,8 +77,20 @@ Vai abrir o shell
 
 https://stackoverflow.com/questions/46330327/how-are-pipfile-and-pipfile-lock-used
 
+### listar
+
+pipenv graph
+
+####
+
+run: executa um comando à partir do virtualenv, com quaisquer argumentos encaminhados (pipenv run pip freeze).
+
+Executa como se fosse os comandos do pip
 
 
+
+
+install torch_nightly -f 
 
 
 ==========
@@ -98,3 +110,22 @@ Flask = "*"
 
 python_version = "3.6"
 
+==================================
+
+Baixar direto
+
+https://download.pytorch.org/whl/cpu/torch_stable.html
+
+exlher a versoa e baixar como
+
+pipenv install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-win_amd64.whl 
+
+
+
+
+torch = {file = "https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl"}
+
+
+Atualiza PipLock
+> pipenv lock
+and it will update the Pipfile.lock file. :)
