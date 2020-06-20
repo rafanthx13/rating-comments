@@ -38,3 +38,28 @@ $ source venv/bin/activate
 + https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
 + https://www.tutorialspoint.com/flask/flask_environment.htm
 + https://linuxize.com/post/how-to-install-flask-on-ubuntu-18-04/
+
+
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+
+
+PIPENV
+
+## INSTALAR
+
+Just use pip:
+
+$ pip install pipenv
+Or, if you’re using Ubuntu 17.10:
+
+$ sudo apt install software-properties-common python-software-properties
+$ sudo add-apt-repository ppa:pypa/ppa
+$ sudo apt update
+$ sudo apt install pipenv
+
+## UPDATE ANYTIME
+
+$ pip install --user --upgrade pipenv

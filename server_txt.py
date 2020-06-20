@@ -17,7 +17,7 @@ CORS(app)
 def hello():
     return 'Hello, World!'
 
-@app.route('/test2', methods = ['POST'])
+@app.route('/rating', methods = ['POST'])
 @cross_origin()
 def call_test():
 	comentario = request.json['comentario']
