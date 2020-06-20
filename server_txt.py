@@ -12,13 +12,16 @@ import textminig_code
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
+
+
 @app.route("/")
 def root():
-    return render_template("index.html")
+    return send_from_directory('templates', 'index.html')
 
-@app.route('/indexx.html')
+@app.route('/alphal')
 def roott():
-    return render_template('index.html')
+	form = ReviewForm(request.form)
+    return render_template('index.html', reviewForm = form)
 
 @app.route('/get')
 @cross_origin
