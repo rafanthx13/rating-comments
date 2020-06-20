@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <title>Text Mining</title>
     
-    <link rel="stylesheet" type="text/css" href="lib/node_modules/angular-material/angular-material.min.css">
-    <script src="lib/node_modules/angular/angular.min.js"></script>
-    <script src="lib/node_modules/angular-material/angular-material.js"></script>
-    <script src="lib/node_modules/angular-animate/angular-animate.min.js"></script>
-    <script src="lib/node_modules/angular-aria/angular-aria.min.js"></script>
-    <script src="lib/node_modules/angular-messages/angular-messages.min.js"></script>
-	<script src="https://kit.fontawesome.com/f5913b1737.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="templates/lib/node_modules/angular-material/angular-material.min.css">
+    <script src="templates/lib/node_modules/angular/angular.min.js"></script>
+    <script src="templates/lib/node_modules/angular-material/angular-material.js"></script>
+    <script src="templates/lib/node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="templates/lib/node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="templates/lib/node_modules/angular-messages/angular-messages.min.js"></script>
+	<!-- <script src="https://kit.fontawesome.com/f5913b1737.js" crossorigin="anonymous"></script> -->
     
     <style type="text/css">
 
@@ -50,7 +50,7 @@
 	    	$scope.avaliation = null;
 	    	$scope.error = false;
 	    	$scope.error_message = '';
-	    	$scope.img_src = 'img/';
+	    	$scope.img_src = 'templates/img/';
 
 	    	$scope.action_text_minig = function (form) {
 	    		if (form.$valid) {
@@ -103,11 +103,11 @@
 	    		if(avaliation.Resposta == "Comentario positivo detectado"){
 	    			avaliation.Status = true;
 	    			avaliation.Inferencia = Math.round(avaliation.Inferencia*100);
-	    			$scope.img_src = 'img/positive.png';
+	    			$scope.img_src = 'templates/img/positive.png';
 	    		}else{
 	    			avaliation.Status = false;
 	    			avaliation.Inferencia = Math.round(100 - (avaliation.Inferencia*100));
-	    			$scope.img_src = 'img/negative.png';
+	    			$scope.img_src = 'templates/img/negative.png';
 	    		}
 	    		return avaliation;
 	    	};
@@ -180,7 +180,6 @@
 				</div>
 			</div>
 
-			
 		</md-card>
 
 	</div>
@@ -189,12 +188,9 @@
 		<span>Deu erro: {{error_message}}</span>
 	</md-card>	
 
-	 <footer class="text-center">
-	<a class="a-hoover" href="https://rafanthx13.github.io/">
-   			 <p id="copyright">Desenvolvido por Rafael Morais de Assis</p>
-	    </a>    
-      
-  </footer>
+	<footer class="text-center">
+		<p id="copyright">Desenvolvido por ⚡️<a class="a-hoover" href="https://rafanthx13.github.io/">Rafael Morais de Assis</a> </p>
+  	</footer>
 
 </body>
 </html>
