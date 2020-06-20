@@ -1,137 +1,28 @@
-# Text Minig: Avaliador de Comentário
+<div align="center">
+<h1>Server Avaliador de comentários</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/app-api--server-success" alt="App API-SERVER">
+  <img src="https://img.shields.io/badge/server-python--flask-orange" alt="Server Flask">
+  <img src="https://img.shields.io/badge/ml--lib-pytorch-orange" alt="ml-lib pytorch">
+  <img src="https://img.shields.io/badge/ml--model-RNN--LSTM-orange" alt="ml-model pytorch">
+</p>
+</div>
 
-Trabalho de IA: Utilizaçâo de Rede Neural LSTM para aprender a classificar comentários sobre produtos com interface web usando Angular JS.
+## Objetivo
 
-DataSet: https://www.kaggle.com/olistbr/brazilian-ecommerce/home
+Página Web para servir de acesso ao servidor Flask que avalie comentário em positivos e negativos.
 
-### Instalar no Linux
+**Links**
++ [Página Web para avaliar comentários](https://rafanthx13.github.io/rating-comments-app/)
 
-1. (Dados) Descompate o zip na pasta `/dados` para poder usar o `.csv`
+  
 
-2. (Web) na pasta `lib` execute no terminal `npm i` para instalar as dependências web para a página.
+## Tecnologias
 
-3. Para usar é recomendável instlar um `virtualenv` para rodar o flask. Basta seguir os seguintes passos (usando pytohn 3):
+**Flask Server - Python**
 
-4. Execute os seguintes comandos no terminal: Instalar o virtual env, executalo, instlar as dependencias do python para o projeto, configurar `FLASK_APP` e rodar o server localmente.
-
-```
-$ sudo apt install python3-venv
-$ python3 -m venv venv
-$ source venv/bin/activate
-(venv) $ pip install flask
-(venv) $ pip install flask_cors
-(venv) $ pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
-(venv) $ pip install pandas
-(venv) $ export FLASK_APP=server_txt.py
-(venv) $ flask run
-```
-
-+ Tem que aparecer: `* Running on http://127.0.0.1:5000/`  indicando que está funcionando.
-+ Para sair do flask, de CTRL+C e 
-+ para sair desse ambiente, `deactivate`
-
-5. Em seguida abra o `index.hmtl` pelo navegador e execute.
-
-**Links úteis para instalação do virtualenv**
-
-+ http://flask.pocoo.org/docs/1.0/installation/#install-create-env
-+ https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
-+ https://www.tutorialspoint.com/flask/flask_environment.htm
-+ https://linuxize.com/post/how-to-install-flask-on-ubuntu-18-04/
++ **[Flask](https://flask.palletsprojects.com/en/1.1.x/)** : Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
++ **[PyTorch)](https://pytorch.org/)** : PyTorch is an open source deep learning platform created by Facebook’s AI research group.
 
 
-
-pip install --upgrade pip
-pip install -r requirements.txt
-
-> # gera requirements
-pip freeze > requirements.txt
-
-
-
-PIPENV
-
-## INSTALAR
-
-Just use pip:
-
-$ pip install pipenv
-Or, if you’re using Ubuntu 17.10:
-
-$ sudo apt install software-properties-common python-software-properties
-$ sudo add-apt-repository ppa:pypa/ppa
-$ sudo apt update
-$ sudo apt install pipenv
-
-## UPDATE ANYTIME
-
-$ pip install --user --upgrade pipenv
-
-## Usar
-
-pipenv shell
-
-Vai abrir o shell
-
-## MELHOR SITE PARA ENTENDER PIPENV
-
-https://stackoverflow.com/questions/46330327/how-are-pipfile-and-pipfile-lock-used
-
-### listar
-
-pipenv graph
-
-####
-
-run: executa um comando à partir do virtualenv, com quaisquer argumentos encaminhados (pipenv run pip freeze).
-
-Executa como se fosse os comandos do pip
-
-
-
-
-install torch_nightly -f 
-
-
-==========
-
-
-[[source]]
-
-url = "https://pypi.python.org/simple"
-verify_ssl = true
-
-
-[packages]
-
-Flask = "*"
-
-[requires]
-
-python_version = "3.6"
-
-==================================
-
-Baixar direto
-
-https://download.pytorch.org/whl/cpu/torch_stable.html
-
-exlher a versoa e baixar como
-
-pipenv install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-win_amd64.whl 
-
-
-
-
-torch = {file = "https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl"}
-torch = {file = "https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl"}
-
-
-da erro em
-https://download.pytorch.org/whl/cpu/torch-1.2.0+cpu-cp37-cp37m-manylinux1_x86_64.whl#egg=torch
-mas é 
-https://download.pytorch.org/whl/cpu/torch-1.2.0%2Bcpu-cp37-cp37m-manylinux1_x86_64.whl
-
-Atualiza PipLock
-> pipenv lock
-and it will update the Pipfile.lock file. :)
+<h2 align="center">Feito por &#128640; <a href="https://rafanthx13.github.io/">Rafael Morais de Assis</a></h2>
