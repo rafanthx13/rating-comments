@@ -12,7 +12,6 @@ DataSet: https://www.kaggle.com/olistbr/brazilian-ecommerce/home
 
 3. Para usar é recomendável instlar um `virtualenv` para rodar o flask. Basta seguir os seguintes passos (usando pytohn 3):
 
-
 4. Execute os seguintes comandos no terminal: Instalar o virtual env, executalo, instlar as dependencias do python para o projeto, configurar `FLASK_APP` e rodar o server localmente.
 
 ```
@@ -21,7 +20,7 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 (venv) $ pip install flask
 (venv) $ pip install flask_cors
-(venv) $ pip install torch
+(venv) $ pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
 (venv) $ pip install pandas
 (venv) $ export FLASK_APP=server_txt.py
 (venv) $ flask run
