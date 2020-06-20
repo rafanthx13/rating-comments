@@ -16,12 +16,12 @@ CORS(app)
 
 @app.route("/")
 def root():
-    return send_from_directory('templates', 'index.html')
+	return send_from_directory('templates', 'index.html')
 
 @app.route('/alphal')
 def roott():
 	form = ReviewForm(request.form)
-    return render_template('index.html', reviewForm = form)
+	return render_template('index.html', reviewForm = form)
 
 @app.route('/get')
 @cross_origin
