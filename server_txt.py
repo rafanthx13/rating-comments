@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS, cross_origin
 from json import dumps
 
@@ -12,7 +12,9 @@ import textminig_code
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
-
+class ReviewForm(Form):
+	moviereview = TextAreaField('',
+			[validators.DataRequired(), validators.length(min=15)])
 
 @app.route("/")
 def root():
@@ -20,8 +22,9 @@ def root():
 
 @app.route('/alphal')
 def roott():
+	name= 'indexx'
 	form = ReviewForm(request.form)
-	return render_template('index.html', reviewForm = form)
+	return render_template('index.html', name=name, reviewForm = form)
 
 @app.route('/get')
 @cross_origin
