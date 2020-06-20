@@ -44,6 +44,9 @@ $ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
+> # gera requirements
+pip freeze > requirements.txt
+
 
 
 PIPENV
@@ -63,3 +66,35 @@ $ sudo apt install pipenv
 ## UPDATE ANYTIME
 
 $ pip install --user --upgrade pipenv
+
+## Usar
+
+pipenv shell
+
+Vai abrir o shell
+
+## MELHOR SITE PARA ENTENDER PIPENV
+
+https://stackoverflow.com/questions/46330327/how-are-pipfile-and-pipfile-lock-used
+
+
+
+
+
+==========
+
+
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+
+[packages]
+
+Flask = "*"
+
+[requires]
+
+python_version = "3.6"
+
