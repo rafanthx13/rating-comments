@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS, cross_origin
 from json import dumps
 
@@ -12,9 +12,13 @@ import textminig_code
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
-@app.route('/')
+@app.route("/")
 def root():
-    return app.send_static_file('index.html')
+    return render_template("index.html")
+
+@app.route('/indexx.html')
+def roott():
+    return render_template('index.html')
 
 @app.route('/get')
 @cross_origin
