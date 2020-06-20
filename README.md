@@ -124,7 +124,13 @@ pipenv install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-win_am
 
 
 torch = {file = "https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl"}
+torch = {file = "https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl"}
 
+
+da erro em
+https://download.pytorch.org/whl/cpu/torch-1.2.0+cpu-cp37-cp37m-manylinux1_x86_64.whl#egg=torch
+mas é 
+https://download.pytorch.org/whl/cpu/torch-1.2.0%2Bcpu-cp37-cp37m-manylinux1_x86_64.whl
 
 Atualiza PipLock
 > pipenv lock
