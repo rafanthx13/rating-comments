@@ -1,159 +1,7 @@
-# Deploy Heroku Flask App
-
-## Índice
-
-[TOC]
-
-
-
-## Links
-
-## Heroku Deploy Flask App
-
-
-### `Procfile`
-ter na raiz o arquivo `Procfile` que vai determinar qual arquivo executar
-
-`Procfile`
-
-````
-web: python server_txt.py
-````
-
-### `runtime.txt`
-
-Especificar qual a versão do python usar.
-
-O heroku aceita as versões a seguir:
-````
-python-3.8.3
-python-3.7.7
-python-3.6.10
-python-2.7.18
-````
-
-Escolha uma e coloque no `runtime.txt`
-
-Para ter a lista completa veja no [aqui](https://devcenter.heroku.com/articles/python-support#specifying-a-python-version)
-
-as dependências podem ser colocadas de duas formas:
-+ pip com `requirements.txt`
-+ pipenv com `Pipfile` e `Pip.lock`
-
-### Dependências com `pip` e `requirements.txt`
-
-É recomendável criar um um ambiente virtual para cada projeto, para assim pode conseguir gerar para cada um `requirements.txt` que é como o `package.json` do node. Esse ambiente já vem com pip instalado.
-
-#### Ambiente virtual com `venv`
-
-**Instalar `venv` no python**
-
-````sh
-$ sudo apt install python3-venv
-````
-**Criar virtual env**
-
-````sh
-# criar
-$ python3 -m venv venv
-# ativar
-$ source venv/bin/activate
-# instalar dependencias
-(venv) $ pip install flask
-(venv) $ pip install flask_cors
-# executar app falsk
-(venv) $ export FLASK_APP=server_txt.py
-(venv) $ flask run
-# sair do `venv`
-(venv) $ deactivate
-# sair do terminal
-$ exit
-```
-
-OBS:
-+ As dependências instaladas ficam na pasta `venv/` que não deve ser mandada ao git.
-
-**Criar `requirements.txt` com as dependências do projeto**
-
-````sh
-$ (venv) pip freeze > requirements.txt
-````
-**Instalar dependências de `requirements.txt`**
-
-````sh
-$ (venv)  install -r requirements.txt
-````
-
-**Atualizar pip**
-
-````sh
-$ pip install --upgrade pip
-````
-
-#### `requirements.txt`
-
-o arquivo `requirements.txt` é da seguinte forma
-
-````
-click==7.1.2
-Flask==1.1.2
-Flask-Cors==3.0.8
-future==0.18.2
-itsdangerous==1.1.0
-Jinja2==2.11.2
-MarkupSafe==1.1.1
-numpy==1.18.5
-pandas==1.0.5
-Pillow==7.1.2
-python-dateutil==2.8.1
-pytz==2020.1
-six==1.15.0
-Werkzeug==1.0.1
-````
-Você também pode adicionar dependências apartir de seu link, terminando com a extensão `whl`
-
-Exemplo do pytorch que usa cpu (lightweight)
-
-`requirements.txt`
-
-````
-https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl
-click==7.1.2
-Flask==1.1.2
-````
-
-#### Deploy no heroku
-
-````sh
-$ git push heroku master
-Counting objects: 4, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (4/4), 276 bytes | 276.00 KiB/s, done.
-Total 4 (delta 0), reused 0 (delta 0)
-remote: Compressing source files... done.
-remote: Building source:
-remote:
-remote: -----> Python app detected
-remote: -----> Installing python-3.7.4
-remote: -----> Installing pip
-remote: -----> Installing SQLite3
-remote: -----> Installing requirements with pip
-remote:        Collecting flask (from -r /tmp/build_c2c067ef79ff14c9bf1aed6796f9ed1f/requirements.txt (line 1))
-remote:          Downloading ...
-remote:        Installing collected packages: Werkzeug, click, MarkupSafe, Jinja2, itsdangerous, flask
-remote:        Successfully installed Jinja2-2.10 MarkupSafe-1.1.0 Werkzeug-0.14.1 click-7.0 flask-1.0.2 itsdangerous-1.1.0
-remote:
-remote: -----> Discovering process types
-remote:        Procfile declares types -> (none)
-remote:
-````
-Se não aparecer que está instalando as suas dependências, tente fazer denovo. De qualquer forma, o heroku está apto a ler o `requirements.txt`
-
-
-### Dependências com ambiente virtual `pipenv`
-
 #### Instalar 
+#  `pipenv`
+
+## Install
 
 Just use pip:
 ````sh
@@ -174,9 +22,6 @@ $ sudo apt install pipenv
 ```sh
 $ pip install --user --upgrade pipenv
 ```
-
-
-
 
 #### Uso do `pipenv`
 
@@ -203,13 +48,11 @@ $ pipenv uninstall <package>
 $ pipenv shell
 ```
 
-
 ... and your virtual environment will be activated. To leave the environment...
 
 ```sh
 $ exit
 ```
-
 
 ... and you will be back to your original terminal session.
 
@@ -376,19 +219,3 @@ Commands:
 
 
 
-
-
-## Instalar `pytorch (cpu only - lightweight)` no heroku 
-
-Colocamos
-
-```
-https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp37-cp37m-linux_x86_64.whl
-```
-
-em `requirements.txt` e mandamos dessa forma até que no build sejam feita a instalação desse pacote.
-
-### OBS
-
-+ O heroku tem 512 MB (free tier), então, instalar a versão completa do `pythoch`  não dá certo
-+ Não consegui de maneira alguma instalar pytorch cpu com `pipenv`
